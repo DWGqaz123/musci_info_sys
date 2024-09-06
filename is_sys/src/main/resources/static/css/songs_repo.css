@@ -1,0 +1,278 @@
+/* 全局样式 */
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%);
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-attachment: fixed;
+    background-size: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+
+body.fade-in {
+    opacity: 1;
+}
+/* 返回按钮样式 */
+/* From Uiverse.io by Jedi-hongbin */ 
+#back-btn {
+    display: flex;
+    height: 3em;
+    width: 100px;
+    align-items: center;
+    justify-content: center;
+    background-color: #eeeeee4b;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    transition: all 0.2s linear;
+    cursor: pointer;
+    border: none;
+    background: #ff6b81;
+    color: #f0f0f0;
+    position: absolute;
+    top: 10em;
+    left: 10em;
+   }
+   
+   #back-btn > svg {
+    margin-right: 5px;
+    margin-left: 5px;
+    font-size: 20px;
+    font-weight: 200;
+    transition: all 0.4s ease-in;
+    color: #f0f0f0;
+   }
+   
+   #back-btn:hover > svg {
+    font-size: 1.2em;
+    transform: translateX(-5px);
+   }
+   
+   #back-btn:hover {
+    box-shadow: 9px 9px 33px #d1d1d1, -9px -9px 33px #ffffff;
+    transform: translateY(-2px);
+   }
+
+h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #f0f0f0;
+    font-weight: 700;
+}
+
+/* 表格样式 */
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+table, th, td {
+    border: none;
+    text-align: left;
+    color: #fff;
+}
+
+th, td {
+    padding: 15px 20px;
+    font-size: 16px;
+}
+
+th {
+    background-color: rgba(255, 255, 255, 0.1);
+    font-weight: bold;
+    color: #ccc;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* 点赞按钮样式 */
+.like-button {
+    cursor: pointer;
+    font-size: 22px;
+    color: #f39c12;
+    transition: transform 0.2s ease-in-out;
+}
+
+.like-button:hover {
+    transform: scale(1.2);
+    color: #f1c40f;
+}
+
+
+/* 鼠标样式 */
+.close {
+    cursor: pointer; /* 手形鼠标 */
+}
+
+/* Modal 背景 */
+.modal {
+    display: none;  /* 默认隐藏 */
+    position: fixed;
+    z-index: 10;  /* 高 z-index，确保模态框在页面顶部 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);  /* 半透明背景 */
+    justify-content: center;
+    align-items: center;
+    opacity: 0;  /* 初始透明 */
+    transition: opacity 0.5s ease;  /* 添加过渡效果 */
+}
+
+.modal.show {
+    display: flex;  /* 当显示时设为 flex */
+    opacity: 1;  /* 渐入显示 */
+}
+
+.modal-content {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;  /* 确保有宽度 */
+    max-width: 90%;  /* 响应式宽度，防止在小屏设备上溢出 */
+    position: relative;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    opacity: 1;  /* 确保内容是可见的 */
+    transition: opacity 0.5s ease;  /* 添加透明度过渡效果 */
+}
+
+/* 关闭按钮 */
+.modal .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    color: #fcfcfc;
+    cursor: pointer;
+}
+
+.modal .close:hover {
+    color: #000;
+}
+/* 播放列表项的样式 */
+#playlistContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.playlist-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.playlist-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px); /* 鼠标悬停时卡片上移 */
+}
+
+.playlist-item p {
+    margin: 0;
+    font-size: 16px;
+}
+
+
+
+/* 添加到播放列表按钮的基础样式 */
+.op-btn {
+    background-color: #ff4757; 
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* 添加过渡效果 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 按钮阴影 */
+}
+
+/* 鼠标悬停时的效果 */
+.op-btn:hover {
+    background-color: #930808; /* 悬停时更深的蓝色 */
+    transform: translateY(-3px); /* 悬停时按钮稍微上移 */
+}
+
+/* 鼠标按下时的效果 */
+.op-btn:active {
+    background-color: #1e6a96; /* 按下时的颜色 */
+    transform: translateY(0); /* 按下时复位 */
+}
+
+/* From Uiverse.io by andrew-demchenk0 */ 
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  .container {
+    display: inline-flex; /* 使用 flexbox 布局 */
+    align-items: center;  /* 垂直居中 */
+    gap: 5px; /* 添加图标和数字之间的间距 */
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    
+  }
+
+  
+  .container svg {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 50px;
+    transition: all 0.3s;
+    fill: #666;
+  }
+  
+  .container svg:hover {
+    transform: scale(1.1);
+  }
+  
+  .container input:checked ~ svg {
+    fill: #ffeb49;
+  }
+
+  /* Star 数量展示的样式 */
+/* 样式调整 */
+.star-count-label {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;  /* 或者设置具体的高度 */
+    padding-left: 8px;  /* 添加一点左侧间距，使其与星星图标分开 */
+    font-size: 16px;  /* 你可以调整数字的大小 */
+    color: #fff;      /* 设定 count 数字的颜色 */
+}

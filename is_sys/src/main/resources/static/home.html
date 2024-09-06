@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Themed Homepage</title>
+    <link rel="stylesheet" href="./css/home.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="logo">MyMusic</div>
+            <!-- <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#explore">Explore</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul> -->
+        </nav>
+        <div class="header-content">
+            <h1>Discover the Soundtrack of Your Life</h1>
+            <p>Tune into your next favorite song</p>
+            <button class="cta-btn" onclick="location.href='./login.html'">Login / Register</button>
+            <canvas id="audio-visualizer"></canvas> <!-- 放在 header-content 里 -->
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <section id="explore" class="explore-section">
+        <h2>Featured Artists & Albums</h2>
+        <audio id="audio" controls>
+            <source src="./media/homeMusic.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <p>&copy; 2024 MyMusic. All rights reserved.</p>
+    </footer>
+
+    <script src="./js/home.js"></script>
+</body>
+
+</html>
